@@ -1,0 +1,13 @@
+        @Override
+        protected Object clone() throws CloneNotSupportedException 
+        {
+            LabBinarySearchTree myTree = new LabBinarySearchTree(cloneTree(getRoot()));
+            return myTree;
+        }
+        public BTNode cloneTree(BTNode root) {
+            if (root == null) {return null;}
+            BTNode newNode = new BTNode(root.value,null,null);
+            newNode.left = cloneTree(root.left);
+            newNode.right = cloneTree(root.right);
+            return newNode;
+        }  
