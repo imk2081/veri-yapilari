@@ -1,0 +1,11 @@
+        @Override
+        public BTNode<T> successor(T value) {
+            BTNode root = find(getRoot(),value); 
+            if (root == null) {return null;}
+            root=root.right;
+            while(root.left!=null)
+            {
+                root=root.left;
+            }
+            return root; //21
+        }
