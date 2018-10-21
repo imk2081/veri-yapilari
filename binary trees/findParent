@@ -1,0 +1,34 @@
+        @Override
+        public BTNode<T> findParent(BTNode<T> node)/*10*/ {
+            BTNode<T> possibleParrent = new BTNode(null,null,null);
+            BTNode<T> myRootNode = this.getRoot();
+            if(myRootNode==node)
+            {possibleParrent=myRootNode;return null;}//node kok ise
+            try
+            {
+                while(true)
+                {
+                if(myRootNode.value.compareTo(node.value)==0)
+                {return possibleParrent;}
+                //if(value.compareTo(node.value)<0)
+                //root value less then node value
+                else if(myRootNode.value.compareTo(node.value)>0)
+                    {
+                    possibleParrent=myRootNode;
+                    myRootNode=myRootNode.left;
+                    continue;
+                    }
+                //root value bigger then node value
+                else if(myRootNode.value.compareTo(node.value)<0)
+                    {
+                    possibleParrent=myRootNode;
+                    myRootNode=myRootNode.right;
+                    continue;
+                    }
+                }
+            }
+            catch(NullPointerException e)
+            {
+                return null;
+            }
+        }
