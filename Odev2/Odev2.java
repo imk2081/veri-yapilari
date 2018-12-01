@@ -9,10 +9,12 @@ public class Odev2 {
     public static String huffmanKodla(String girdi, HuffmanTree agac) {
             String[] words = girdi.split("");
             HashMap<String, Integer> hm = new HashMap<String, Integer>(); 
+            //>>>>>>>>>>>>>>
             for (String a : words) {
             Integer freq = hm.get(a);
             hm.put(a, (freq == null) ? 1 : freq + 1);
-            } 
+            }
+            //^^^^^^^^^^^^^^
             HuffmanNode[] hArray = new HuffmanNode[hm.size()];
             int index = 0;
             //>>>>>>>>>>>>>>
